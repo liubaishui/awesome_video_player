@@ -141,7 +141,7 @@ class _AwsomeVideoPlayerState extends State<AwsomeVideoPlayer>
     //监听系统的每一帧
     widgetsBinding.addPostFrameCallback((callback) {
       widgetsBinding.addPersistentFrameCallback((callback) {
-        if (context == null) return;
+        if (!mounted) return;
         var orientation = MediaQuery.of(context).orientation;
         bool _fullscreen;
         if (orientation == Orientation.landscape) {
